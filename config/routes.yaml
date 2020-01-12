@@ -1,3 +1,17 @@
 index:
-  path: /
+  path:       /
   controller: App\Controller\BlogController::number
+
+rand:
+  path:       /rand
+  controller: App\Controller\BlogController::rand
+  methods:    GET|HEAD
+
+number:
+  path:       /number/{number}
+  controller: App\Controller\BlogController::getNumber
+  methods:    GET|HEAD
+  requirements:
+    number: '\d+'
+  defaults:
+    number: 1
